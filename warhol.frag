@@ -43,16 +43,16 @@ void main() {
           tex.rgb = 1.0 - vec3(0., tex.r, 0.);      
       }
     }  
-    /*else{
+    else{
       if (col == 0.)
-        tex.rgb = 1.0 - vec3(tex.g, tex.r,tex.b);;
+        tex.rgb = vec3(tex.g, 1. - tex.r,tex.b);
       else{
         if (col == 1.)
           tex.rgb = 1.0 - vec3(1., tex.r,tex.b);
-       else
-         tex.rgb = 1.0 - vec3(1., 1.,tex.b);      
+        else
+          tex.rgb = 1.0 - vec3(0.5+ 0.5*tex.r, tex.b,tex.g);
       }
-    } */
+    } 
   }
   
 
