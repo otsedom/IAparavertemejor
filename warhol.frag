@@ -21,7 +21,7 @@ void main() {
   // get the webcam as a vec4 using texture2D
   vec4 tex = texture2D(tex0, uv);
   
-  // lets invert the colors just for fun, differently in each cell
+  // lets invert or alter colors just for fun, differently in each cell
   if (fil == 0.){//Primera fila
     if (col == 0.)
       tex.rgb = 1.0 - tex.rgb;

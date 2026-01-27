@@ -13,7 +13,14 @@
 /* global describe VTX7 VTX33 VTX68 VTX468 TRI7 TRI33 TRI68 TRI468*/
 // now any other lint errors will be your own problem
 
-
+// Mediapipe
+/*import {
+  FaceLandmarker,
+  HandLandmarker,
+  FilesetResolver,
+  DrawingUtils,
+} from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/vision_bundle.js";*/
+//import {FaceLandmarker} from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/vision_bundle.js";
 
 // Mediapipe facemask setup (source https://editor.p5js.org/lingdong/sketches/ef6FB-uNq)
 // A choice for number of keypoints: 7,33,68,468
@@ -170,7 +177,7 @@ function preload(){
   holainv = loadImage('https://cdn.glitch.com/8f5e1723-ab6d-4ffd-9835-f35ff5be72f6%2FHolazoom_inverted.png?v=1606651060276');
   holaedges = loadImage('https://cdn.glitch.com/8f5e1723-ab6d-4ffd-9835-f35ff5be72f6%2FHolazoomedges2.png?v=1606308080322');
   //logo siani
-  logosiani = loadImage('https://cdn.glitch.global/9af36307-0f4c-44c5-b766-6e2adf8bb555/siani_rev_hmr_acronim.jpg?v=1714553987405');
+  //logosiani = loadImage('https://cdn.glitch.global/9af36307-0f4c-44c5-b766-6e2adf8bb555/siani_rev_hmr_acronim.jpg?v=1714553987405');
   //logo eii
   logosiani = loadImage('https://cdn.glitch.global/9af36307-0f4c-44c5-b766-6e2adf8bb555/eii_hmr_acron.jpg?v=1715245469413');
     
@@ -191,6 +198,8 @@ function preload(){
   rabbit = loadImage('https://cdn.glitch.com/8f5e1723-ab6d-4ffd-9835-f35ff5be72f6%2Fconejo.png?v=1604312412668');
 }
 
+
+
 function setup() {
   startTime = millis();
   
@@ -199,7 +208,18 @@ function setup() {
   //Main canvas
   createCanvas(windowWidth, windowHeight);  
   
+  //Identifica cámaras disponibles
+  navigator.mediaDevices.enumerateDevices().then(function (devices) {
+    for(var i = 0; i < devices.length; i ++){
+        var device = devices[i];
+        if (device.kind === 'videoinput') {
+          console.log('Cámara ', device.deviceId) // 425a5c8c198030ce...
+        }
+    };
+});
+  
   //Camera
+  //cam = createCapture(VIDEO, { flipped: true });
   cam = createCapture(VIDEO);
   cam.size(640, 480);
   cam.hide();
