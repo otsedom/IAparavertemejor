@@ -810,7 +810,7 @@ function ModeProcessor(){
       cad = 'Pixelado Minecraft';
       break;
       
-    //Pixelado talero
+    //Pixelado tablero
     case pixelatechessboardmode:
       sh_enabled = true;    
         
