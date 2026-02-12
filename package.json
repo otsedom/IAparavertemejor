@@ -1,0 +1,24 @@
+{
+  "name": "ia-para-verte-mejor",
+  "version": "1.0.0",
+  "description": "VC-EII",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel ./src/index.html --open",
+    "build": "parcel build ./src/index.html"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.16.0",
+    "@tensorflow/tfjs-backend-webgl": "^4.16.0",
+    "@mediapipe/hands": "0.4.1646424915",
+    "@tensorflow-models/hand-pose-detection": "2.0.0",
+    "@tensorflow-models/face-landmarks-detection": "^1.0.6",
+    "@mediapipe/face_mesh": "^0.4.1633559619",
+    "yolov5js": "^1.0.0",
+    "three": "^0.152.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.6.1"
+  },
+  "keywords": ["threejs", "mediapipe", "example"]
+}
